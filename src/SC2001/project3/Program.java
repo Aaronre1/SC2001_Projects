@@ -29,6 +29,10 @@ public class Program {
         int maxProfitDynamic1 = knapsack1.maxProfitDynamic(capacity);
         printResult(capacity, maxProfitDynamic1);
 
+        ///////
+        UnboundedKnapsack unboundedKnapsack = new UnboundedKnapsack(items , 50);
+        int result = unboundedKnapsack.maxProfit(capacity);
+        printResult(capacity,result);
     }
 
     private static void printResult(int capacity, int result) {

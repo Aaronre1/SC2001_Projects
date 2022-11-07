@@ -40,11 +40,11 @@ public class Knapsack {
     private int dynamic(int capacity, int n) {
         for (int i = 1; i <= n; i++) {
             for (int j = 1; j <= capacity; j++) {
-                var item = items[i];
+                var item = items[i-1];
                 if (j < item.weight) {
                     this.profit[i][j] = this.profit[i - 1][j];
                 } else {
-                    this.profit[i][j] = max(items[i].value + this.profit[i - 1][j - item.weight], this.profit[i - 1][j]);
+                    this.profit[i][j] = max(items[i-1].value + this.profit[i - 1][j - item.weight], this.profit[i - 1][j]);
                 }
             }
         }
